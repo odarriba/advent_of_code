@@ -87,7 +87,9 @@ defmodule AdventOfCode.Year2023.Day6 do
 
   defp get_minimum_time(checking_from, checking_to, total_time, distance) do
     if checking_from == checking_to - 1 do
-      if checking_from * (total_time - checking_from) > distance, do: checking_from, else: checking_to
+      if checking_from * (total_time - checking_from) > distance,
+        do: checking_from,
+        else: checking_to
     else
       next_value = Float.floor((checking_to - checking_from) / 2.0) + checking_from
 
