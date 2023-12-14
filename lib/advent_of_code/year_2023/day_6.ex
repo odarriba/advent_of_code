@@ -5,6 +5,16 @@ defmodule AdventOfCode.Year2023.Day6 do
   https://adventofcode.com/2023/day/6
   """
 
+  def run do
+    AdventOfCode.input(2023, 6)
+    |> AdventOfCode.Year2023.Day6.solve(:first)
+    |> IO.inspect(label: "Year 2023, Day 6, Part 1")
+
+    AdventOfCode.input(2023, 6)
+    |> AdventOfCode.Year2023.Day6.solve(:second)
+    |> IO.inspect(label: "Year 2023, Day 6, Part 2")
+  end
+
   def solve(input, part) do
     input
     |> parse_input(part)
@@ -99,11 +109,3 @@ defmodule AdventOfCode.Year2023.Day6 do
     end
   end
 end
-
-AdventOfCode.input(2023, 6)
-|> AdventOfCode.Year2023.Day6.solve(:first)
-|> IO.inspect(label: "Year 2023, Day 6, Part 1")
-
-AdventOfCode.input(2023, 6)
-|> AdventOfCode.Year2023.Day6.solve(:second)
-|> IO.inspect(label: "Year 2023, Day 6, Part 2")

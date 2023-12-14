@@ -5,6 +5,16 @@ defmodule AdventOfCode.Year2023.Day8 do
   https://adventofcode.com/2023/day/8
   """
 
+  def run do
+    AdventOfCode.input(2023, 8)
+    |> AdventOfCode.Year2023.Day8.solve(:first)
+    |> IO.inspect(label: "Year 2023, Day 8, Part 1")
+
+    AdventOfCode.input(2023, 8)
+    |> AdventOfCode.Year2023.Day8.solve(:second)
+    |> IO.inspect(label: "Year 2023, Day 8, Part 2")
+  end
+
   def solve(input, :first) do
     {directions, map} = parse_input(input)
     navigate(directions, map, "AAA")
@@ -86,11 +96,3 @@ defmodule AdventOfCode.Year2023.Day8 do
       else: find_mcm(initial, all_values, step + 1)
   end
 end
-
-AdventOfCode.input(2023, 8)
-|> AdventOfCode.Year2023.Day8.solve(:first)
-|> IO.inspect(label: "Year 2023, Day 8, Part 1")
-
-AdventOfCode.input(2023, 8)
-|> AdventOfCode.Year2023.Day8.solve(:second)
-|> IO.inspect(label: "Year 2023, Day 8, Part 2")

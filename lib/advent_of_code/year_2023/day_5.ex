@@ -15,6 +15,16 @@ defmodule AdventOfCode.Year2023.Day5 do
     :humidity_to_location
   ]
 
+  def run do
+    AdventOfCode.raw_input(2023, 5)
+    |> AdventOfCode.Year2023.Day5.solve_part_1()
+    |> IO.inspect(label: "Year 2023, Day 5, Part 1")
+
+    AdventOfCode.raw_input(2023, 5)
+    |> AdventOfCode.Year2023.Day5.solve_part_2()
+    |> IO.inspect(label: "Year 2023, Day 5, Part 2")
+  end
+
   def solve_part_1(input) do
     data = parse_input(input)
 
@@ -145,11 +155,3 @@ defmodule AdventOfCode.Year2023.Day5 do
     if instruction, do: value + instruction.diff, else: value
   end
 end
-
-AdventOfCode.raw_input(2023, 5)
-|> AdventOfCode.Year2023.Day5.solve_part_1()
-|> IO.inspect(label: "Year 2023, Day 5, Part 1")
-
-AdventOfCode.raw_input(2023, 5)
-|> AdventOfCode.Year2023.Day5.solve_part_2()
-|> IO.inspect(label: "Year 2023, Day 5, Part 2")

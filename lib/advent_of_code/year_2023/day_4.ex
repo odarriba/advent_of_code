@@ -5,6 +5,16 @@ defmodule AdventOfCode.Year2023.Day4 do
   https://adventofcode.com/2023/day/4
   """
 
+  def run do
+    AdventOfCode.input(2023, 4)
+    |> AdventOfCode.Year2023.Day4.solve_part_1()
+    |> IO.inspect(label: "Year 2023, Day 4, Part 1")
+
+    AdventOfCode.input(2023, 4)
+    |> AdventOfCode.Year2023.Day4.solve_part_2()
+    |> IO.inspect(label: "Year 2023, Day 4, Part 2")
+  end
+
   def solve_part_1(input) do
     input
     |> parse_input()
@@ -82,11 +92,3 @@ defmodule AdventOfCode.Year2023.Day4 do
     |> Enum.map(&String.to_integer/1)
   end
 end
-
-AdventOfCode.input(2023, 4)
-|> AdventOfCode.Year2023.Day4.solve_part_1()
-|> IO.inspect(label: "Year 2023, Day 4, Part 1")
-
-AdventOfCode.input(2023, 4)
-|> AdventOfCode.Year2023.Day4.solve_part_2()
-|> IO.inspect(label: "Year 2023, Day 4, Part 2")

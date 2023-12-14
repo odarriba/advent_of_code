@@ -8,6 +8,16 @@ defmodule AdventOfCode.Year2023.Day2 do
   @max_cubes [red: 12, green: 13, blue: 14]
   @colors Keyword.keys(@max_cubes)
 
+  def run do
+    AdventOfCode.input(2023, 2)
+    |> AdventOfCode.Year2023.Day2.solve_part_1()
+    |> IO.inspect(label: "Year 2023, Day 2, Part 1")
+
+    AdventOfCode.input(2023, 2)
+    |> AdventOfCode.Year2023.Day2.solve_part_2()
+    |> IO.inspect(label: "Year 2023, Day 2, Part 1")
+  end
+
   def solve_part_1(input) do
     data = parse_input(input)
 
@@ -68,11 +78,3 @@ defmodule AdventOfCode.Year2023.Day2 do
     end)
   end
 end
-
-AdventOfCode.input(2023, 2)
-|> AdventOfCode.Year2023.Day2.solve_part_1()
-|> IO.inspect(label: "Year 2023, Day 2, Part 1")
-
-AdventOfCode.input(2023, 2)
-|> AdventOfCode.Year2023.Day2.solve_part_2()
-|> IO.inspect(label: "Year 2023, Day 2, Part 1")

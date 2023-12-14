@@ -5,6 +5,16 @@ defmodule AdventOfCode.Year2023.Day1 do
   https://adventofcode.com/2023/day/1
   """
 
+  def run do
+    AdventOfCode.input(2023, 1)
+    |> AdventOfCode.Year2023.Day1.solve(&AdventOfCode.Year2023.Day1.simple_decoder/1)
+    |> IO.inspect(label: "Year 2023, Day 1, Part 1")
+
+    AdventOfCode.input(2023, 1)
+    |> AdventOfCode.Year2023.Day1.solve(&AdventOfCode.Year2023.Day1.extra_decoder/1)
+    |> IO.inspect(label: "Year 2023, Day 1, Part 2")
+  end
+
   def solve(input, decoder) do
     input
     |> Enum.map(fn line ->
@@ -45,11 +55,3 @@ defmodule AdventOfCode.Year2023.Day1 do
     extra_decoder(rest, new_acc ++ acc)
   end
 end
-
-AdventOfCode.input(2023, 1)
-|> AdventOfCode.Year2023.Day1.solve(&AdventOfCode.Year2023.Day1.simple_decoder/1)
-|> IO.inspect(label: "Year 2023, Day 1, Part 1")
-
-AdventOfCode.input(2023, 1)
-|> AdventOfCode.Year2023.Day1.solve(&AdventOfCode.Year2023.Day1.extra_decoder/1)
-|> IO.inspect(label: "Year 2023, Day 1, Part 2")

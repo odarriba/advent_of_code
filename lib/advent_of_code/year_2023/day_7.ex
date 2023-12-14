@@ -11,6 +11,16 @@ defmodule AdventOfCode.Year2023.Day7 do
     second: ["J", "2", "3", "4", "5", "6", "7", "8", "9", "T", "Q", "K", "A"]
   ]
 
+  def run do
+    AdventOfCode.input(2023, 7)
+    |> AdventOfCode.Year2023.Day7.solve(:first)
+    |> IO.inspect(label: "Year 2023, Day 7, Part 1")
+
+    AdventOfCode.input(2023, 7)
+    |> AdventOfCode.Year2023.Day7.solve(:second)
+    |> IO.inspect(label: "Year 2023, Day 7, Part 2")
+  end
+
   def solve(input, part) do
     grouped_hands =
       input
@@ -127,11 +137,3 @@ defmodule AdventOfCode.Year2023.Day7 do
   defp is_pair?(_, 2), do: true
   defp is_pair?(counts, jokers), do: Enum.any?(counts, &(&1 + jokers == 2))
 end
-
-AdventOfCode.input(2023, 7)
-|> AdventOfCode.Year2023.Day7.solve(:first)
-|> IO.inspect(label: "Year 2023, Day 7, Part 1")
-
-AdventOfCode.input(2023, 7)
-|> AdventOfCode.Year2023.Day7.solve(:second)
-|> IO.inspect(label: "Year 2023, Day 7, Part 2")
